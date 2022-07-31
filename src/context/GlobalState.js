@@ -1,4 +1,5 @@
 import React, { createContext, useReducer } from 'react';
+import { ACTION_TRANSACTION_ADD, ACTION_TRANSACTION_DELETE } from './actionHelper';
 import AppReducer from './AppReducer';
 
 // Initial State
@@ -22,14 +23,14 @@ export const GlobalProvider = ({ children }) => {
 
   function deleteTransaction(id) {
     disptach({
-      type: 'DELETE_TRANSACTION',
+      type: ACTION_TRANSACTION_DELETE,
       payload: id
     });
   }
 
   function addTransaction(transaction) {
     disptach({
-      type: 'ADD_TRANSACTION',
+      type: ACTION_TRANSACTION_ADD,
       payload: transaction
     });
   }
