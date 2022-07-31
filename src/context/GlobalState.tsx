@@ -1,4 +1,4 @@
-import React, { createContext, useReducer } from 'react';
+import React, { createContext, ReactElement, ReactNode, useReducer } from 'react';
 import { ACTION_TRANSACTION_ADD, ACTION_TRANSACTION_DELETE } from './actionHelper';
 import AppReducer from './AppReducer';
 
@@ -13,22 +13,26 @@ const initialState = {
 };
 
 // Create GlobalStateContext
-export const GlobalContext = createContext(initialState);
+export const GlobalContext = createContext<any>(initialState);
+
+type GlobalProviderProps = {
+  children: ReactNode;
+};
 
 // Provide Component (HOC)
-export const GlobalProvider = ({ children }) => {
+export const GlobalProvider = ({ children }: GlobalProviderProps) => {
   const [state, disptach] = useReducer(AppReducer, initialState);
 
   // Actions
 
-  function deleteTransaction(id) {
+  function deleteTransaction(id: any) {
     disptach({
       type: ACTION_TRANSACTION_DELETE,
       payload: id
     });
   }
 
-  function addTransaction(transaction) {
+  function addTransaction(transaction: any) {
     disptach({
       type: ACTION_TRANSACTION_ADD,
       payload: transaction

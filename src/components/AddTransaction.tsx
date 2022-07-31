@@ -4,9 +4,9 @@ import { GlobalContext } from '../context/GlobalState';
 export const AddTransaction = () => {
   const [text, setText] = useState('');
   const [amount, setAmount] = useState(0);
-  const { addTransaction } = useContext(GlobalContext);
+  const { addTransaction } = useContext<any>(GlobalContext);
 
-  const addTransactionClickHandler = (e) => {
+  const addTransactionClickHandler = (e: any) => {
     e.preventDefault();
     addTransaction({ text, amount });
   };
@@ -21,7 +21,7 @@ export const AddTransaction = () => {
             type="text"
             placeholder="Enter text..."
             value={text}
-            onChange={(e) => setText(e.target.value)}
+            onChange={(e: any) => setText(e.target.value)}
           />
         </div>
         <div className="form-control">
@@ -33,7 +33,7 @@ export const AddTransaction = () => {
             type="number"
             placeholder="Enter amount..."
             value={amount}
-            onChange={(e) => setAmount(e.target.value)}
+            onChange={(e: any) => setAmount(e.target.value)}
           />
         </div>
         <button className="btn" onClick={(e) => addTransactionClickHandler(e)}>

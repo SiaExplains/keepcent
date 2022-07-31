@@ -1,11 +1,11 @@
 import { ACTION_TRANSACTION_ADD, ACTION_TRANSACTION_DELETE } from './actionHelper';
 
-export default (state, action) => {
+export default (state: any, action: any) => {
   switch (action.type) {
     case ACTION_TRANSACTION_DELETE:
       return {
         ...state,
-        transactions: state.transactions.filter((item) => item.id !== action.payload)
+        transactions: state.transactions.filter((item: any) => item.id !== action.payload)
       };
     case ACTION_TRANSACTION_ADD:
       const { transactions } = state;
