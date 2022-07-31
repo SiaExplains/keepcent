@@ -1,3 +1,8 @@
+# What is Expense Tracker
+Expense-Tracker idea comes from a video from `Traversy Media` youtube channel. Actually, this app will help us to track all expenses and make a history of them. I decided to make a very simple project here and maybe I'll improve it on the way.
+
+Thanks to @bradtraversy (Traversy Media)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
