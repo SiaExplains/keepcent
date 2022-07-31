@@ -1,11 +1,12 @@
 import React, { useContext } from 'react';
 import { GlobalContext } from '../context/GlobalState';
+import { Transaction } from '../types/transaction';
 
 export const IncomeExpenses = () => {
   const { transactions } = useContext(GlobalContext);
   let incomes = 0;
   let expenses = 0;
-  transactions.map((item: any) => {
+  transactions.map((item: Transaction) => {
     if (item.amount > 0) {
       incomes += item.amount;
     } else {
