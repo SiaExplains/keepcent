@@ -1,12 +1,13 @@
 import React, { useContext } from 'react';
 import { GlobalContext } from '../context/GlobalState';
+import { Transaction } from '../types/transaction';
 
 export const Balance = () => {
   const { transactions } = useContext(GlobalContext);
 
-  const amount = transactions.map((item: any) => item.amount);
+  const amount = transactions.map((item: Transaction) => item.amount);
   const total = amount
-    .reduce((accumulated: any, current: any) => (accumulated += current), 0)
+    .reduce((accumulated: number, current: number) => (accumulated += current), 0)
     .toFixed(2);
   return (
     <>

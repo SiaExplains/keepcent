@@ -1,13 +1,13 @@
-import React, { useContext, useState } from 'react';
-import { GlobalContext } from '../context/GlobalState';
+import React, { useContext, useState, MouseEvent, ChangeEvent } from 'react';
+import { GlobalContext, GlobalContextType } from '../context/GlobalState';
 
 export const AddTransaction = () => {
   const [text, setText] = useState('');
   const [amount, setAmount] = useState(0);
-  const { addTransaction } = useContext<any>(GlobalContext);
+  const { addTransaction } = useContext<GlobalContextType>(GlobalContext);
 
-  const addTransactionClickHandler = (e: any) => {
-    e.preventDefault();
+  const addTransactionClickHandler = (event: MouseEvent<HTMLElement>) => {
+    event.preventDefault();
     addTransaction({ text, amount });
   };
 
@@ -21,7 +21,7 @@ export const AddTransaction = () => {
             type="text"
             placeholder="Enter text..."
             value={text}
-            onChange={(e: any) => setText(e.target.value)}
+            onChange={(event: ChangeEvent<HTMLInputElement>) => setText(event.target.value)}
           />
         </div>
         <div className="form-control">
@@ -33,10 +33,14 @@ export const AddTransaction = () => {
             type="number"
             placeholder="Enter amount..."
             value={amount}
-            onChange={(e: any) => setAmount(e.target.value)}
+            onChange={(event: ChangeEvent<HTMLInputElement>) =>
+              setAmount(Number(event.target.value))
+            }
           />
         </div>
-        <button className="btn" onClick={(e) => addTransactionClickHandler(e)}>
+        <button
+          className="btn"
+          onClick={(event: MouseEvent<HTMLElement>) => addTransactionClickHandler(event)}>
           Add transaction
         </button>
       </form>

@@ -1,8 +1,9 @@
 import React, { useContext } from 'react';
-import { GlobalContext } from '../context/GlobalState';
+import { GlobalContext, GlobalContextType } from '../context/GlobalState';
+import { Transaction } from '../types/transaction';
 
-export const TransactionItem = ({ id, text, amount }: any) => {
-  const { deleteTransaction } = useContext<any>(GlobalContext);
+export const TransactionItem = ({ id, text, amount }: Transaction) => {
+  const { deleteTransaction } = useContext<GlobalContextType>(GlobalContext);
   const itemColor = amount < 0 ? 'minus' : 'plus';
   const sign = amount < 0 ? '-' : '+';
 

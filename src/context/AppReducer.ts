@@ -1,11 +1,18 @@
+import { Transaction } from '../types/transaction';
 import { ACTION_TRANSACTION_ADD, ACTION_TRANSACTION_DELETE } from './actionHelper';
+import { GlobalState } from './GlobalState';
 
-export default (state: any, action: any) => {
+type ActionType = {
+  type: string;
+  payload: any;
+};
+
+export default (state: GlobalState, action: ActionType) => {
   switch (action.type) {
     case ACTION_TRANSACTION_DELETE:
       return {
         ...state,
-        transactions: state.transactions.filter((item: any) => item.id !== action.payload)
+        transactions: state.transactions.filter((item: Transaction) => item.id !== action.payload)
       };
     case ACTION_TRANSACTION_ADD:
       const { transactions } = state;
