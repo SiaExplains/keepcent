@@ -1,14 +1,21 @@
 import React, { createContext, ReactElement, ReactNode, useReducer } from 'react';
+import {
+  loadStateFromLocalstorage,
+  storeStateIntoLocalstorage
+} from '../common/localstorageHelper';
 import { Transaction } from '../types/transaction';
 import { ACTION_TRANSACTION_ADD, ACTION_TRANSACTION_DELETE } from './actionHelper';
 import AppReducer from './AppReducer';
 
 // Initial State
-const initialState: GlobalState = {
-  transactions: [
-    { id: 1, text: 'Salary', amount: 300 },
-    { id: 2, text: 'C++ Book', amount: -20 }
-  ]
+const getInitialState = (): GlobalState => {
+  const localstorageState = loadStateFromLocalstorage();
+  if (localstorageState) {
+    return localstorageState;
+  }
+  return {
+    transactions: []
+  };
 };
 
 export type GlobalState = {
@@ -22,7 +29,7 @@ export type GlobalContextType = {
 };
 // Create GlobalStateContext
 export const GlobalContext = createContext<GlobalContextType>({
-  transactions: initialState.transactions,
+  transactions: getInitialState().transactions,
   deleteTransaction: () => {},
   addTransaction: () => {}
 });
@@ -33,7 +40,7 @@ type GlobalProviderProps = {
 
 // Provide Component (HOC)
 export const GlobalProvider = ({ children }: GlobalProviderProps) => {
-  const [state, disptach] = useReducer(AppReducer, initialState);
+  const [state, disptach] = useReducer(AppReducer, getInitialState());
 
   // Actions
 
