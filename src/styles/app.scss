@@ -1,0 +1,17 @@
+.et-app {
+  display: flex;
+  flex-direction: column;
+}
+
+.et-body {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  justify-content: center;
+  &__center {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    max-width: $ScrenMaxWidth;
+  }
+}
