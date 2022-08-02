@@ -5,6 +5,7 @@ import { TransactionItem } from './TransactionItem';
 
 export const TransactionList = () => {
   const { transactions } = useContext<GlobalContextType>(GlobalContext);
+  const hasAnyTransaction = transactions && transactions.length > 0;
 
   return (
     <>
@@ -18,6 +19,7 @@ export const TransactionList = () => {
             amount={transaction.amount}
           />
         ))}
+        {!hasAnyTransaction && <>There is no transaction added yet!</>}
       </ul>
     </>
   );

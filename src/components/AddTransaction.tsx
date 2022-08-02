@@ -1,14 +1,26 @@
-import React, { useContext, useState, MouseEvent, ChangeEvent } from 'react';
+import React, {
+  useContext,
+  useState,
+  MouseEvent,
+  ChangeEvent,
+  MutableRefObject,
+  useRef
+} from 'react';
+
 import { GlobalContext, GlobalContextType } from '../context/GlobalState';
 
 export const AddTransaction = () => {
   const [text, setText] = useState('');
   const [amount, setAmount] = useState(0);
   const { addTransaction } = useContext<GlobalContextType>(GlobalContext);
+  const htmlElRefTextField: MutableRefObject<HTMLInputElement | null> = useRef(null);
 
   const addTransactionClickHandler = (event: MouseEvent<HTMLElement>) => {
     event.preventDefault();
     addTransaction({ text, amount });
+    setAmount(0);
+    setText('');
+    htmlElRefTextField.current?.focus();
   };
 
   return (
@@ -22,6 +34,7 @@ export const AddTransaction = () => {
             placeholder="Enter text..."
             value={text}
             onChange={(event: ChangeEvent<HTMLInputElement>) => setText(event.target.value)}
+            ref={htmlElRefTextField}
           />
         </div>
         <div className="form-control">
