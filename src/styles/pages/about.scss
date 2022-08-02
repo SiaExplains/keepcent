@@ -1,0 +1,36 @@
+.page-about {
+  padding: 20px;
+  .title {
+    padding: 20px;
+    color: rgb(80, 80, 80);
+    font-size: 18pt;
+  }
+  p {
+    color: rgb(75, 75, 75);
+    font-size: 14px;
+  }
+  .member {
+    border: 1px solid rgb(199, 199, 199);
+    padding: 20px;
+    margin: 20px;
+    border-radius: 4px;
+    display: block;
+    .tags {
+      .tag {
+        border-radius: 2px;
+        padding-left: 2px;
+        padding-right: 2px;
+        font-size: 12px;
+        margin: 2px;
+        border: 1px solid rgb(152, 152, 152);
+        background-color: rgb(253, 230, 25);
+        color: black;
+        cursor: default;
+        &:hover {
+          cursor: pointer;
+          background-color: orange;
+        }
+      }
+    }
+  }
+}

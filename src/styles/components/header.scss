@@ -1,0 +1,24 @@
+.et-header {
+  background-color: rgb(246, 248, 250);
+  box-shadow: rgb(235, 238, 241) 0px -1px 0px 0px inset;
+  box-sizing: border-box;
+  color: rgb(65, 69, 82);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  fill: rgb(84, 89, 105);
+  font-family: -apple-system, 'system-ui', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  font-size: 14px;
+  font-weight: 400;
+  height: 44px;
+  line-height: normal;
+  &__center {
+    max-width: $ScrenMaxWidth;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+}

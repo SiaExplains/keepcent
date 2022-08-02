@@ -1,0 +1,19 @@
+.et-sidebar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  max-width: 200px;
+  padding: 5px;
+  ul {
+    list-style-type: none;
+    margin-top: 0;
+    margin-bottom: 0;
+    list-style: none;
+    padding-left: 0;
+    li {
+      &:hover {
+        background-color: antiquewhite;
+      }
+    }
+  }
+}
