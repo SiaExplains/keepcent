@@ -15,7 +15,6 @@ function App() {
       <GlobalProvider>
         <div className="et-app">
           <Header />
-
           <div className="et-body">
             <div className="et-body__center">
               <Sidebar />
