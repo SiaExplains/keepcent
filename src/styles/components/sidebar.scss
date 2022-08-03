@@ -2,8 +2,11 @@
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
-  max-width: 200px;
+  flex-wrap: wrap;
+  width: 200px;
   padding: 5px;
+
+  margin: 0;
   ul {
     list-style-type: none;
     margin-top: 0;
