@@ -22,3 +22,26 @@
     height: 100%;
   }
 }
+
+.et-logo {
+  flex: 1;
+  font-size: 18px;
+  padding-left: 10px;
+  span {
+    font-size: 12px;
+    color: gray;
+  }
+}
+
+.et-header-search-bar {
+  border: none;
+  color: dimgray;
+  padding: 3px;
+  background-color: white;
+  min-width: 200px;
+  margin-left: 5px;
+  margin-right: 5px;
+  @include et-max($et-viewport-sm) {
+    flex: 1;
+  }
+}

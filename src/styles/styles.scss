@@ -10,6 +10,11 @@ body {
   font-family: 'Lato', sans-serif;
 }
 
+@import './variables.scss';
+@import './mixins/common.scss';
+
+@import './utilities.scss';
+
 //ATOMS
 @import './atoms/atoms.scss';
 

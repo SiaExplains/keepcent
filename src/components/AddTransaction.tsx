@@ -8,18 +8,21 @@ import React, {
 } from 'react';
 
 import { GlobalContext, GlobalContextType } from '../context/GlobalState';
+import { Category } from '../types/category';
 
 export const AddTransaction = () => {
   const [text, setText] = useState('');
   const [amount, setAmount] = useState(0);
-  const { addTransaction } = useContext<GlobalContextType>(GlobalContext);
+  const [category, setCategory] = useState(0);
+  const { addTransaction, categories } = useContext<GlobalContextType>(GlobalContext);
   const htmlElRefTextField: MutableRefObject<HTMLInputElement | null> = useRef(null);
 
   const addTransactionClickHandler = (event: MouseEvent<HTMLElement>) => {
     event.preventDefault();
-    addTransaction({ text, amount });
+    addTransaction({ text, amount, category });
     setAmount(0);
     setText('');
+    setCategory(0);
     htmlElRefTextField.current?.focus();
   };
 
@@ -50,6 +53,17 @@ export const AddTransaction = () => {
               setAmount(Number(event.target.value))
             }
           />
+        </div>
+        <div className="form-control">
+          <label htmlFor="amount">
+            Amount <br />
+            (negative - expense, positive - income)
+          </label>
+          <select onChange={(event: any) => setCategory(event.target.value)}>
+            {categories.map((category: Category) => {
+              return <option key={category.id}>{category.title}</option>;
+            })}
+          </select>
         </div>
         <button
           className="btn"
