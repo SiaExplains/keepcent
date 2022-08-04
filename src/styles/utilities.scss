@@ -1,0 +1,92 @@
+.mr-vt-sm {
+  margin: 10px 0;
+}
+
+.mr-hr-sm {
+  margin: 0 10px;
+}
+
+.et-bold {
+  font-weight: 600 !important;
+}
+
+.et-hidden-no-strict {
+  display: none;
+}
+
+.et-hidden {
+  display: none !important;
+}
+
+//xs viewport - 0 - 479px
+.et-hidden-xs {
+  @include et-min-max(0, $et-viewport-sm - 1) {
+    display: none !important;
+  }
+}
+
+.et-visible-xs {
+  @include et-min($et-viewport-sm) {
+    display: none;
+  }
+}
+
+//sm viewport - 480px - 767px
+.et-hidden-sm {
+  @include et-min-max($et-viewport-sm, $et-viewport-md - 1) {
+    display: none !important;
+  }
+}
+
+.et-visible-sm {
+  @include et-min($et-viewport-md) {
+    display: none;
+  }
+}
+
+//md viewport - 767px - 991px
+.et-hidden-md {
+  @include et-min-max($et-viewport-md, $et-viewport-lg - 1) {
+    display: none !important;
+  }
+}
+
+.et-visible-md {
+  @include et-min-max(0, $et-viewport-md - 1) {
+    display: none;
+  }
+
+  @include et-min($et-viewport-lg) {
+    display: none;
+  }
+}
+
+//xl viewport - 991px - 1109px
+.et-hidden-lg {
+  @include et-min-max($et-viewport-lg, $et-viewport-xl - 1) {
+    display: none !important;
+  }
+}
+
+.et-visible-lg {
+  @include et-min-max($et-viewport-xs - 1, $et-viewport-lg - 1) {
+    display: none;
+  }
+
+  @include et-min($et-viewport-xl) {
+    display: none;
+  }
+}
+
+//xl viewport - 1110 - ∞
+.et-hidden-xl {
+  @include et-min($et-viewport-xl) {
+    display: none !important;
+  }
+}
+
+.et-visible-xl {
+  @include et-max($et-viewport-xl - 1) {
+    display: none;
+  }
+}

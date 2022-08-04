@@ -17,6 +17,7 @@ export const TransactionList = () => {
             id={transaction.id}
             text={transaction.text}
             amount={transaction.amount}
+            category={transaction.category}
           />
         ))}
         {!hasAnyTransaction && <>There is no transaction added yet!</>}

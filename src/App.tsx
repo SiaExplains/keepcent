@@ -8,6 +8,7 @@ import OverviewPage from './pages/overview';
 import AboutPage from './pages/about';
 import ContactPage from './pages/contact';
 import './styles/styles.scss';
+import CategoryPage from './pages/category';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
 
                   <Route path="/contact" element={<ContactPage />}></Route>
                   <Route path="/about" element={<AboutPage />}></Route>
+                  <Route path="/category" element={<CategoryPage />}></Route>
                 </Routes>
               </ContentContainer>
             </div>

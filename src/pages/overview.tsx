@@ -8,8 +8,8 @@ const OverviewPage = () => {
     <div className="container">
       <Balance />
       <IncomeExpenses />
-      <TransactionList />
       <AddTransaction />
+      <TransactionList />
     </div>
   );
 };

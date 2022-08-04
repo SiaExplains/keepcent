@@ -8,6 +8,9 @@ const Sidebar = () => {
           <Link to="/">Overview</Link>
         </li>
         <li>
+          <Link to="/category">Category</Link>
+        </li>
+        <li>
           <Link to="/about">About Us</Link>
         </li>
         <li>

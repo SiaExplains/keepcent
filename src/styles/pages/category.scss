@@ -1,0 +1,38 @@
+.et-list {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 40px;
+}
+
+.et-list__item {
+  padding: 5px;
+  border: 1px solid rgb(239, 239, 239);
+  display: flex;
+  cursor: default;
+  &:nth-child(2n) {
+    background-color: rgb(233, 233, 233);
+  }
+  &:hover {
+    background-color: rgb(195, 195, 195);
+    cursor: pointer;
+  }
+}
+
+.category-title {
+  flex: 1;
+}
+
+.delete-button {
+  background-color: maroon;
+  color: white;
+  border: 0;
+  border-radius: 4px;
+  padding-left: 10px;
+  padding-right: 10px;
+  max-width: 40px;
+  cursor: default;
+  &:hover {
+    cursor: pointer;
+    background-color: rgb(178, 33, 33);
+  }
+}
