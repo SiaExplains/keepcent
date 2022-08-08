@@ -9,6 +9,7 @@ import AboutPage from './pages/about';
 import ContactPage from './pages/contact';
 import './styles/styles.scss';
 import CategoryPage from './pages/category';
+import SettingsPage from './pages/settings';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
                   <Route path="/contact" element={<ContactPage />}></Route>
                   <Route path="/about" element={<AboutPage />}></Route>
                   <Route path="/category" element={<CategoryPage />}></Route>
+                  <Route path="/settings" element={<SettingsPage />}></Route>
                 </Routes>
               </ContentContainer>
             </div>

@@ -1,17 +1,20 @@
 import { MutableRefObject, useContext, useRef, useState, MouseEvent, ChangeEvent } from 'react';
 import { GlobalContext, GlobalContextType } from '../context/GlobalState';
-import { Category } from '../types/category';
+import { Category, CategoryType } from '../types/category';
+import sortBy from 'lodash/sortBy';
 
 const CategoryPage = () => {
   const { categories, deleteCategory, addCategory } = useContext<GlobalContextType>(GlobalContext);
-  const hasAnyCategory = categories && categories.length > 0;
+  const sortedCategories = sortBy(categories, ['type', 'title']);
+  const hasAnyCategory = sortedCategories && sortedCategories.length > 0;
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
+  const [categoryType, setCategoryType] = useState(CategoryType.OutCome);
   const htmlElRefTextField: MutableRefObject<HTMLInputElement | null> = useRef(null);
 
   const addCategoryClickHandler = (event: MouseEvent<HTMLElement>) => {
     event.preventDefault();
-    addCategory({ title, description });
+    addCategory({ title, description, categoryType });
     setDescription('');
     setTitle('');
     htmlElRefTextField.current?.focus();
@@ -40,9 +43,8 @@ const CategoryPage = () => {
           />
         </div>
         <div className="form-control">
-          <label htmlFor="amount">
-            Amount <br />
-            (negative - expense, positive - income)
+          <label htmlFor="description">
+            Description <br />
           </label>
           <input
             type="text"
@@ -51,6 +53,15 @@ const CategoryPage = () => {
             onChange={(event: ChangeEvent<HTMLInputElement>) => setDescription(event.target.value)}
           />
         </div>
+        <div className="form-control">
+          <label htmlFor="type">
+            Type <br />
+          </label>
+          <select onChange={(event: any) => setCategoryType(event.target.value)}>
+            <option value={CategoryType.OutCome}>Outcome</option>
+            <option value={CategoryType.Income}>Income</option>
+          </select>
+        </div>
         <button
           className="btn"
           onClick={(event: MouseEvent<HTMLElement>) => addCategoryClickHandler(event)}>
@@ -58,10 +69,10 @@ const CategoryPage = () => {
         </button>
       </form>
       <div>
-        <h4>List of category:</h4>
+        <h4>List of categories:</h4>
         {hasAnyCategory && (
           <ul className="et-list">
-            {categories.map((category: Category) => {
+            {sortedCategories.map((category: Category) => {
               return (
                 <li key={category.id} className="et-list__item">
                   <div className="category-title">{category.title}</div>

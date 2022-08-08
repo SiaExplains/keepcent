@@ -16,6 +16,12 @@ const Sidebar = () => {
         <li>
           <Link to="/contact">Contact Us</Link>
         </li>
+        <li>
+          <hr />
+        </li>
+        <li>
+          <Link to="/settings">Settings</Link>
+        </li>
       </ul>
     </div>
   );

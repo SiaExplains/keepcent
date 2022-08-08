@@ -3,6 +3,13 @@ import { isBrowser } from './isBrowser';
 
 export const LOCALSTORAGE_GLOBAL_STATE = 'LOCALSTORAGE_GLOBAL_STATE';
 
+const clearStateInLocalstorage = () => {
+  storeStateIntoLocalstorage({
+    transactions: [],
+    categories: []
+  });
+};
+
 const storeStateIntoLocalstorage = (state: GlobalState) => {
   if (isBrowser) {
     localStorage.setItem(LOCALSTORAGE_GLOBAL_STATE, JSON.stringify(state));
@@ -19,4 +26,4 @@ const loadStateFromLocalstorage = () => {
   }
 };
 
-export { storeStateIntoLocalstorage, loadStateFromLocalstorage };
+export { storeStateIntoLocalstorage, loadStateFromLocalstorage, clearStateInLocalstorage };
