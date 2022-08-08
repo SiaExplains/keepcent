@@ -23,7 +23,7 @@ export default (state: GlobalState, action: ActionType) => {
   switch (action.type) {
     case ACTION_TRANSACTION_ADD:
       const { transactions } = state;
-      const { text, amount, category } = action.payload;
+      const { text, amount, category, transactionType } = action.payload;
       let lastTransactionId = 1;
       if (transactions && transactions.length > 0) {
         lastTransactionId = transactions[transactions.length - 1].id;
@@ -33,7 +33,7 @@ export default (state: GlobalState, action: ActionType) => {
         ...state,
         transactions: [
           ...state.transactions,
-          { id: lastTransactionId + 1, text, amount: Number(amount), category }
+          { id: lastTransactionId + 1, text, amount: Number(amount), category, transactionType }
         ]
       });
     case ACTION_TRANSACTION_DELETE:
@@ -45,7 +45,7 @@ export default (state: GlobalState, action: ActionType) => {
     case ACTION_CATEGORY_ADD:
       const { categories } = state;
       const newCategories = categories ?? [];
-      const { title, description } = action.payload;
+      const { title, description, categoryType } = action.payload;
       let lastCatgoryId = 1;
       if (newCategories && newCategories.length > 0) {
         lastCatgoryId = newCategories[newCategories.length - 1].id;
@@ -53,7 +53,7 @@ export default (state: GlobalState, action: ActionType) => {
 
       return persistOnClient({
         ...state,
-        categories: [...newCategories, { id: lastCatgoryId + 1, title, description }]
+        categories: [...newCategories, { id: lastCatgoryId + 1, title, description, categoryType }]
       });
 
     case ACTION_CATEGORY_DELETE:
