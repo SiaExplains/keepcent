@@ -5,16 +5,24 @@ const Sidebar = () => {
     <div className="et-sidebar">
       <ul>
         <li>
-          <Link to="/">Overview</Link>
+          <Link to="/">
+            <i className="fa fa-home" /> Home
+          </Link>
         </li>
         <li>
-          <Link to="/category">Category</Link>
+          <Link to="/category">
+            <i className="fa fa-folder-open" /> Category
+          </Link>
         </li>
         <li>
-          <Link to="/about">About Us</Link>
+          <Link to="/about">
+            <i className="fa fa-leaf" /> About Us
+          </Link>
         </li>
         <li>
-          <Link to="/contact">Contact Us</Link>
+          <Link to="/contact">
+            <i className="fa fa-phone" /> Contact Us
+          </Link>
         </li>
       </ul>
     </div>
