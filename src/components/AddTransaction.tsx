@@ -25,10 +25,22 @@ export const AddTransaction = () => {
 
   useEffect(() => {
     setFilteredCategories(filter(categories, (cat) => cat.categoryType == transactionType));
+    if (filteredCategories.length > 0) {
+      setCategory(filteredCategories[0].id);
+    }
   }, [transactionType]);
 
   const addTransactionClickHandler = (event: MouseEvent<HTMLElement>) => {
     event.preventDefault();
+    const hasTitle = text !== '';
+    const hasAmount = amount !== 0;
+    const hasCategory = category !== 0;
+
+    if (!hasTitle || !hasAmount || !hasCategory) {
+      alert('One or more of your inputs are empty.');
+      return;
+    }
+
     const normalisedAmount =
       transactionType == CategoryType.Income ? Math.abs(amount) : Math.abs(amount) * -1;
 
