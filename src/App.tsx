@@ -10,6 +10,7 @@ import ContactPage from './pages/contact';
 import './styles/styles.scss';
 import CategoryPage from './pages/category';
 import SettingsPage from './pages/settings';
+import Footer from './components/Layout/Footer';
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
               </ContentContainer>
             </div>
           </div>
+          <Footer />
         </div>
       </GlobalProvider>
     </Router>
