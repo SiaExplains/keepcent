@@ -14,6 +14,7 @@ import Footer from './components/Layout/Footer';
 import BlogPage from './pages/blog';
 import NewsPage from './pages/news';
 import TermsOfUsePage from './pages/terms';
+import DesktopNavigation from './components/Navigation/DesktopNavigation';
 
 function App() {
   return (
@@ -21,9 +22,10 @@ function App() {
       <GlobalProvider>
         <div className="et-app">
           <Header />
+          <DesktopNavigation />
           <div className="et-body">
             <div className="et-body__center">
-              <Sidebar />
+              {/* <Sidebar /> */}
               <ContentContainer>
                 <Routes>
                   <Route path="/" element={<OverviewPage />}></Route>

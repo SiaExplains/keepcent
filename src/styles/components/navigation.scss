@@ -1,0 +1,46 @@
+.et-navigation {
+  &__parent {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    justify-content: center;
+    background-color: rgb(203, 233, 248);
+  }
+
+  &__child {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    max-width: $ScrenMaxWidth;
+    flex-wrap: wrap;
+  }
+
+  &__desktop {
+    background-color: rgb(203, 233, 248);
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    .et-nav-item {
+      flex: 1;
+      height: 32px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      max-width: 150px;
+      &:hover {
+        background-color: rgb(166, 207, 227);
+        cursor: pointer;
+      }
+      a {
+        color: rgb(48, 48, 48);
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__mobile {
+  }
+}
