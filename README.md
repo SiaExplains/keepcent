@@ -1,5 +1,5 @@
-# What is Expense Tracker
-Expense-Tracker idea comes from a video from `Traversy Media` youtube channel. Actually, this app will help us to track all expenses and make a history of them. I decided to make a very simple project here and maybe I'll improve it on the way.
+# What is KeepCent
+KeepCent idea comes from a video from `Traversy Media` youtube channel. Actually, this app will help us to track all expenses and make a history of them. I decided to make a very simple project here and maybe I'll improve it on the way.
 
 Thanks to @bradtraversy (Traversy Media)
 
