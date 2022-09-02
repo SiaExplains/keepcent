@@ -20,6 +20,11 @@ const Sidebar = () => {
           </Link>
         </li>
         <li>
+          <Link to="/news">
+            <i className="fa fa-newspaper-o" /> News
+          </Link>
+        </li>
+        <li>
           <Link to="/about">
             <i className="fa fa-leaf" /> About Us
           </Link>

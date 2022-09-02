@@ -12,6 +12,7 @@ import CategoryPage from './pages/category';
 import SettingsPage from './pages/settings';
 import Footer from './components/Layout/Footer';
 import BlogPage from './pages/blog';
+import NewsPage from './pages/news';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
                   <Route path="/" element={<OverviewPage />}></Route>
 
                   <Route path="/blog" element={<BlogPage />}></Route>
+                  <Route path="/news" element={<NewsPage />}></Route>
                   <Route path="/contact" element={<ContactPage />}></Route>
                   <Route path="/about" element={<AboutPage />}></Route>
                   <Route path="/category" element={<CategoryPage />}></Route>
