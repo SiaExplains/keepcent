@@ -15,6 +15,11 @@ const Sidebar = () => {
           </Link>
         </li>
         <li>
+          <Link to="/blog">
+            <i className="fa fa-feed" /> Blog
+          </Link>
+        </li>
+        <li>
           <Link to="/about">
             <i className="fa fa-leaf" /> About Us
           </Link>

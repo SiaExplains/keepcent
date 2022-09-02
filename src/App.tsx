@@ -11,6 +11,7 @@ import './styles/styles.scss';
 import CategoryPage from './pages/category';
 import SettingsPage from './pages/settings';
 import Footer from './components/Layout/Footer';
+import BlogPage from './pages/blog';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
                 <Routes>
                   <Route path="/" element={<OverviewPage />}></Route>
 
+                  <Route path="/blog" element={<BlogPage />}></Route>
                   <Route path="/contact" element={<ContactPage />}></Route>
                   <Route path="/about" element={<AboutPage />}></Route>
                   <Route path="/category" element={<CategoryPage />}></Route>
