@@ -7,4 +7,11 @@
   color: white;
   text-align: center;
   vertical-align: middle;
+  a {
+    color: white;
+    &:hover {
+      background-color: white;
+      color: blue;
+    }
+  }
 }
