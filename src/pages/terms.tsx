@@ -1,4 +1,4 @@
-const TermsOfUse = () => {
+const TermsOfUsePge = () => {
   return (
     <div>
       <h2>Terms of Use</h2>
@@ -13,4 +13,4 @@ const TermsOfUse = () => {
     </div>
   );
 };
-export default TermsOfUse;
+export default TermsOfUsePge;

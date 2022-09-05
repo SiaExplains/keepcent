@@ -13,7 +13,7 @@ import SettingsPage from './pages/settings';
 import Footer from './components/Layout/Footer';
 import BlogPage from './pages/blog';
 import NewsPage from './pages/news';
-import TermsOfUse from './pages/terms';
+import TermsOfUsePage from './pages/terms';
 
 function App() {
   return (
@@ -29,7 +29,7 @@ function App() {
                   <Route path="/" element={<OverviewPage />}></Route>
 
                   <Route path="/blog" element={<BlogPage />}></Route>
-                  <Route path="/terms" element={<TermsOfUse />}></Route>
+                  <Route path="/terms" element={<TermsOfUsePage />}></Route>
                   <Route path="/news" element={<NewsPage />}></Route>
                   <Route path="/contact" element={<ContactPage />}></Route>
                   <Route path="/about" element={<AboutPage />}></Route>
