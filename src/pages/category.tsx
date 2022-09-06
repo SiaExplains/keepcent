@@ -27,7 +27,7 @@ const CategoryPage = () => {
   };
 
   return (
-    <div>
+    <div className="container">
       <span>You can manage you categories here.</span>
       <br />
 
