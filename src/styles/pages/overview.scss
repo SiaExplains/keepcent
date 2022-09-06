@@ -4,7 +4,10 @@
 
 .container {
   margin: 30px auto;
-  width: 350px;
+  width: 500px;
+  @include et-max($et-viewport-sm) {
+    width: 350px;
+  }
 }
 
 h1 {

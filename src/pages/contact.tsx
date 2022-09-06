@@ -1,6 +1,6 @@
 const ContactPage = () => {
   return (
-    <div>
+    <div className="container">
       <span>This is contact page</span>
       <br />
       <div>We will complete this page soon!</div>

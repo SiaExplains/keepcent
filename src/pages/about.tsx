@@ -1,6 +1,6 @@
 const AboutPage = () => {
   return (
-    <div className="page-about">
+    <div className="page-about container">
       <div className="title">About our small team</div>
       <div className="member">
         <div>UX Designer: Sheida Mohassesy</div>

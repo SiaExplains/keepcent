@@ -1,8 +1,8 @@
 .et-header {
-  background-color: rgb(246, 248, 250);
+  background-color: $secondary-110;
   box-shadow: rgb(235, 238, 241) 0px -1px 0px 0px inset;
   box-sizing: border-box;
-  color: rgb(65, 69, 82);
+  color: rgb(222, 224, 230);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -29,7 +29,7 @@
   padding-left: 10px;
   span {
     font-size: 12px;
-    color: gray;
+    color: white;
   }
 }
 

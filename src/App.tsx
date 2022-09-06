@@ -14,16 +14,18 @@ import Footer from './components/Layout/Footer';
 import BlogPage from './pages/blog';
 import NewsPage from './pages/news';
 import TermsOfUsePage from './pages/terms';
+import Navigation from './components/Navigation/Navigation';
 
-function App() {
+const App = () => {
   return (
     <Router>
       <GlobalProvider>
         <div className="et-app">
           <Header />
-          <div className="et-body">
+          <Navigation />
+          <div className="et-body" id="et-body">
             <div className="et-body__center">
-              <Sidebar />
+              {/* <Sidebar /> */}
               <ContentContainer>
                 <Routes>
                   <Route path="/" element={<OverviewPage />}></Route>
@@ -44,6 +46,6 @@ function App() {
       </GlobalProvider>
     </Router>
   );
-}
+};
 
 export default App;
