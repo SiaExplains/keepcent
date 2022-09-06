@@ -1,6 +1,6 @@
 const TermsOfUsePge = () => {
   return (
-    <div>
+    <div className="container">
       <h2>Terms of Use</h2>
       <hr />
       <p>
