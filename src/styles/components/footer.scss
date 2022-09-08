@@ -2,16 +2,55 @@
   background-color: $secondary-110;
   position: fixed;
   bottom: 0;
-  height: 40px;
   width: 100%;
   color: white;
   text-align: center;
   vertical-align: middle;
+  display: flex;
   a {
-    color: white;
+    color: rgb(199, 199, 199);
+    text-decoration: none;
     &:hover {
-      background-color: white;
-      color: blue;
+      color: rgb(255, 255, 255);
     }
+  }
+  & > * {
+    // border: 1px solid white;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .copyright {
+    flex: 1;
+    font-size: $et-font-xs;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    img {
+      width: 32px;
+      height: 32px;
+    }
+    .copyright-text {
+      margin-top: 5px;
+      flex: 1;
+    }
+  }
+  .links {
+    font-size: $et-font-sm;
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 5px 5px;
+    a {
+      justify-self: start;
+    }
+  }
+  .social {
+    flex: 2;
+  }
+  .contact {
+    flex: 1;
   }
 }
