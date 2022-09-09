@@ -1,14 +1,12 @@
 .et-footer {
   background-color: $secondary-110;
-  position: fixed;
-  bottom: 0;
   width: 100%;
-  color: white;
+  color: #e5e5e5;
   text-align: center;
   vertical-align: middle;
   display: flex;
   a {
-    color: rgb(199, 199, 199);
+    color: #e5e5e5;
     text-decoration: none;
     &:hover {
       color: rgb(255, 255, 255);
@@ -16,24 +14,30 @@
   }
   & > * {
     // border: 1px solid white;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
 
-  .copyright {
-    flex: 1;
+  .copyright-container {
     font-size: $et-font-xs;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    img {
-      width: 32px;
-      height: 32px;
-    }
-    .copyright-text {
-      margin-top: 5px;
-      flex: 1;
+    align-items: flex-end;
+    flex: 1;
+    .copyright-item {
+      margin-right: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      img {
+        width: 32px;
+        height: 32px;
+      }
+      .copyright-text {
+        margin-top: 5px;
+        flex: 1;
+      }
     }
   }
   .links {
@@ -41,16 +45,42 @@
     flex: 1;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
     gap: 5px 5px;
+    min-width: 350px;
     a {
       justify-self: start;
     }
   }
   .social {
-    flex: 2;
-  }
-  .contact {
     flex: 1;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: $et-font-sm;
+    .social-logos {
+      img {
+        width: 24px;
+        height: 24px;
+        margin: 0 5px;
+      }
+    }
+  }
+
+  .contact-container {
+    display: flex;
+    flex: 1;
+    text-align: center;
+    justify-content: flex-start;
+
+    align-items: center;
+    font-size: $et-font-sm;
+    .contact-item {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-left: 40px;
+      font-family: 'Open Sans Regular', 'Lato';
+    }
   }
 }
