@@ -5,13 +5,22 @@
   text-align: center;
   vertical-align: middle;
   display: flex;
+  flex-wrap: nowrap;
+
+  @include et-max($et-viewport-sm) {
+    flex-wrap: wrap;
+  }
+
   a {
     color: #e5e5e5;
     text-decoration: none;
+    border-bottom: 1px solid transparent;
     &:hover {
       color: rgb(255, 255, 255);
+      border-bottom: 1px dotted rgba(255, 255, 255, 0.5);
     }
   }
+
   & > * {
     // border: 1px solid white;
     margin-top: 20px;
@@ -25,11 +34,18 @@
     justify-content: center;
     align-items: flex-end;
     flex: 1;
+    @include et-max($et-viewport-sm) {
+      flex: 3;
+      justify-content: flex-end;
+    }
     .copyright-item {
       margin-right: 40px;
       display: flex;
       flex-direction: column;
       align-items: center;
+      @include et-max($et-viewport-sm) {
+        margin-right: 10px;
+      }
       img {
         width: 32px;
         height: 32px;
@@ -50,6 +66,9 @@
     min-width: 350px;
     a {
       justify-self: start;
+      @include et-max($et-viewport-sm) {
+        justify-self: center;
+      }
     }
   }
   .social {
@@ -58,29 +77,55 @@
     justify-content: center;
     align-items: center;
     font-size: $et-font-sm;
+    min-width: 350px;
+    padding: 0;
+    @include et-max($et-viewport-sm) {
+      padding: 0 30px;
+    }
     .social-logos {
+      a {
+        border-bottom: none;
+      }
       img {
-        width: 24px;
-        height: 24px;
+        width: 28px;
+        height: 28px;
         margin: 0 5px;
+        border-radius: 50%;
+        opacity: 0.7;
+        transition: linear 300ms;
+        &:hover {
+          opacity: 1;
+          cursor: pointer;
+          background-color: rgb(67, 69, 71);
+        }
       }
     }
   }
-
   .contact-container {
     display: flex;
     flex: 1;
     text-align: center;
     justify-content: flex-start;
-
     align-items: center;
     font-size: $et-font-sm;
+
+    @include et-max($et-viewport-sm) {
+      flex: 4;
+    }
     .contact-item {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
       margin-left: 40px;
       font-family: 'Open Sans Regular', 'Lato';
+      @include et-max($et-viewport-sm) {
+        margin-left: 20px;
+      }
     }
+  }
+
+  .copyright-contact-container {
+    display: flex;
+    flex: 1;
   }
 }
