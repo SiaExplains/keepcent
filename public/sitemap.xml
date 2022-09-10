@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://keepcent.vercel.app</loc>
+    <loc>https://keepcent.vercel.app/category</loc>
+    <loc>https://keepcent.vercel.app/about</loc>
+    <loc>https://keepcent.vercel.app/news</loc>
+    <loc>https://keepcent.vercel.app/blog</loc>
+    <loc>https://keepcent.vercel.app/contact</loc>
+    <loc>https://keepcent.vercel.app/settings</loc>
+    <loc>https://keepcent.vercel.app/terms</loc>
+    <lastmod>hourly</lastmod>
+  </url>
+</urlset>
