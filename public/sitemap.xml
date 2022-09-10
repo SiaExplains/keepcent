@@ -2,12 +2,33 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://keepcent.vercel.app</loc>
-    <loc>https://keepcent.vercel.app/category</loc>
+    <lastmod>hourly</lastmod>
+  </url>
+  <url>
+  <loc>https://keepcent.vercel.app/category</loc>
+  <lastmod>hourly</lastmod>
+  </url>
+  <url>
     <loc>https://keepcent.vercel.app/about</loc>
+    <lastmod>hourly</lastmod>
+  </url>
+  <url>
     <loc>https://keepcent.vercel.app/news</loc>
+    <lastmod>hourly</lastmod>
+  </url>
+    <url>
     <loc>https://keepcent.vercel.app/blog</loc>
+    <lastmod>hourly</lastmod>
+  </url>
+    <url>
     <loc>https://keepcent.vercel.app/contact</loc>
+    <lastmod>hourly</lastmod>
+  </url>
+    <url>
     <loc>https://keepcent.vercel.app/settings</loc>
+    <lastmod>hourly</lastmod>
+  </url>
+    <url>
     <loc>https://keepcent.vercel.app/terms</loc>
     <lastmod>hourly</lastmod>
   </url>
