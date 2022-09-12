@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { MenuItem } from '../../types/menu-item';
 import { MenuItems } from './MenuItems';
 
@@ -10,7 +10,7 @@ const DesktopNavigation = () => {
           {MenuItems.map((item: MenuItem) => {
             return (
               <li className="et-nav-item">
-                <Link to={item.path}>{item.title}</Link>
+                <Link href={item.path}>{item.title}</Link>
               </li>
             );
           })}

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { slide as Menu } from 'react-burger-menu';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { MenuItem } from '../../types/menu-item';
 import { MenuItems } from './MenuItems';
 
@@ -26,7 +26,7 @@ const MobileNavigation = () => {
       onClose={handleIsOpen}>
       {MenuItems.map((item: MenuItem) => {
         return (
-          <Link id="category" className="menu-item" to={item.path} onClick={closeSideBar}>
+          <Link id="category" className="menu-item" href={item.path} onClick={closeSideBar}>
             {item.title}
           </Link>
         );

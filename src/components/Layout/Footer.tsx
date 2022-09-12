@@ -1,5 +1,5 @@
 import { BrowserView, MobileView } from 'react-device-detect';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import ColoredLogo, { LogoSizes } from '../ColoredLogo';
 
 const FooterCopyrightComponent = () => {
@@ -19,20 +19,20 @@ const FooterCopyrightComponent = () => {
 const FooterLinkComponent = () => {
   return (
     <div className="links">
-      <Link to="/">Home</Link>
-      <Link to="/blog">Blog</Link>
-      <Link to="/news">News</Link>
-      <Link to="/timeline">Timeline</Link>
-      <Link to="/contact">Contact</Link>
-      <Link to="/about">About</Link>
-      <Link to="/privacy-policy">Privacy Policy</Link>
-      <Link to="/terms">Terms of Use</Link>
-      <Link to="/faq">FAQ</Link>
+      <Link href="/">Home</Link>
+      <Link href="/blog">Blog</Link>
+      <Link href="/news">News</Link>
+      <Link href="/timeline">Timeline</Link>
+      <Link href="/contact">Contact</Link>
+      <Link href="/about">About</Link>
+      <Link href="/privacy-policy">Privacy Policy</Link>
+      <Link href="/terms">Terms of Use</Link>
+      <Link href="/faq">FAQ</Link>
       <a href="https://github.com/SiaQnbr/keepcent" target="_blank">
         GitHub
       </a>
-      <Link to="/sitemap">SiteMap</Link>
-      <Link to="/login">Login</Link>
+      <Link href="/sitemap">SiteMap</Link>
+      <Link href="/login">Login</Link>
     </div>
   );
 };
