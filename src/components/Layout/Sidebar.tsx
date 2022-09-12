@@ -4,7 +4,7 @@ const Sidebar = () => {
   return (
     <div className="et-sidebar">
       <ul>
-        <li>
+        {/* <li>
           <Link to="/">
             <i className="fa fa-home" /> Home
           </Link>
@@ -39,7 +39,7 @@ const Sidebar = () => {
         </li>
         <li>
           <Link to="/settings">Settings</Link>
-        </li>
+        </li> */}
       </ul>
     </div>
   );
