@@ -5,7 +5,7 @@ const Header = () => {
     <div className="et-header">
       <div className="et-header__center" id="et-header">
         <div className="et-logo et-hidden-xs">
-          KeepCent <span>(1.0.0)</span>
+          KeepCent <span>(1.0.1) - Nextjs</span>
         </div>
       </div>
     </div>
