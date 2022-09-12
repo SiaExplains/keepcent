@@ -1,0 +1,52 @@
+.blog-container {
+  border-bottom: 1px solid rgb(80, 80, 80);
+  padding: 20px 20px 10px;
+  position: relative;
+  z-index: 2;
+  &:hover {
+    background-color: rgb(161, 208, 228);
+  }
+  .blog-date {
+    color: teal;
+    font-size: small;
+  }
+  p {
+    color: rgb(75, 75, 75);
+    font-size: 14px;
+  }
+  div {
+    position: relative;
+    .read-more {
+      background-color: white;
+      border-radius: 5px;
+      bottom: -13px;
+      color: teal;
+      font-size: 14px;
+      font-weight: 500;
+      height: 26px;
+      line-height: 26px;
+      padding: 0 10px;
+      position: absolute;
+      right: 50px;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+  }
+  .tags {
+    .tag {
+      border-radius: 2px;
+      padding-left: 2px;
+      padding-right: 2px;
+      font-size: 12px;
+      margin: 2px;
+      border: 1px solid rgb(152, 152, 152);
+      background-color: rgb(229, 222, 151);
+      color: black;
+      cursor: default;
+      &:hover {
+        cursor: pointer;
+        background-color: rgb(231, 188, 108);
+      }
+    }
+  }
+}
