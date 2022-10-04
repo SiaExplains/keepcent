@@ -1,15 +1,36 @@
-import * as AWS from 'aws-sdk';
-const { fromIni } = require("@aws-sdk/credential-providers");
 
-let s3Client: any;
+import { DynamoDBClient, DynamoDB } from "@aws-sdk/client-dynamodb";
+import { Injectable } from "@nestjs/common";
+import { AWS_CREDENTIAL_PROFILE, AWS_REGION } from "../constants";
+const {fromIni} = require("@aws-sdk/credential-providers");
 
-const getS3Client = () => {
-  if (!s3Client) {
-    s3Client = new AWS.S3({
-      credentials: fromIni({profile: 'keep-cent'})
-    });
+
+type DyanamoUtil = {
+  client: DynamoDBClient;
+  server: DynamoDB;
+}
+@Injectable()
+export class DynamoDbClientService {
+  private ddbClient: DynamoDBClient;
+  private ddb: DynamoDB;
+
+  getInstance(): DyanamoUtil {
+    if(!this.ddbClient) {
+      this.ddbClient = new DynamoDBClient({ 
+        region: AWS_REGION,
+        credentials: fromIni({profile: AWS_CREDENTIAL_PROFILE}) 
+      });
+    }
+    if(!this.ddb) {
+      this.ddb = new DynamoDB({
+        region: AWS_REGION,
+        credentials: fromIni({profile: AWS_CREDENTIAL_PROFILE}) 
+      });
+    }
+
+    return { client: this.ddbClient , server: this.ddb} ;
   }
-  return s3Client;
-};
 
-export default getS3Client;
+}
+
+export default DynamoDbClientService;

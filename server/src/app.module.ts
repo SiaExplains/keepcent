@@ -1,10 +1,13 @@
 import { Module } from '@nestjs/common';
+import { DynamoDbClientService } from './common/aws/getDynamoDbClient';
 import { CategoryController } from './controller/category/category.controller';
-import { AppService } from './services/category/app.service';
+import { UserController } from './controller/user/user.controller';
+import { CategoryRepository } from './repositories/transaction/category.repository';
+import { UserRepository } from './repositories/user/user.repository';
 
 @Module({
   imports: [],
-  controllers: [CategoryController],
-  providers: [AppService],
+  controllers: [CategoryController, UserController],
+  providers: [DynamoDbClientService, CategoryRepository, UserRepository],
 })
 export class AppModule {}

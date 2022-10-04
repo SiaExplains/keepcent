@@ -1,41 +1,53 @@
-import { Controller, Get } from '@nestjs/common';
-import { AppService } from '../../services/category/app.service';
-import { ddbClient } from '../../common/db/dbClient';
-import * as AWS from 'aws-sdk';
-import { PutItemCommand, PutItemCommandInput } from "@aws-sdk/client-dynamodb";
-import { marshall } from "@aws-sdk/util-dynamodb";
-
+import { Body, Controller, Delete, Get, Post } from '@nestjs/common';
+import { CategoryRepository } from 'src/repositories/transaction/category.repository';
+import { Category } from 'src/types/category.model';
+import { uuid } from 'src/common/uuid';
+import { UserRepository } from 'src/repositories/user/user.repository';
+import { isEmpty } from 'lodash';
 
 
 @Controller()
 export class CategoryController {
-  constructor(private readonly appService: AppService) {}
-
-
+  constructor(
+    private readonly categoryRepository: CategoryRepository, 
+    private readonly userRepository: UserRepository
+    ) { }
 
   @Get()
   getHello(): string {
-    return this.appService.getHello();
+    return 'Hello Wordl!'
   }
 
-  @Get("/cat")
-  async getCategory(): Promise<string[]> {
-    console.log('recived a request for /cat');
-
-      const params: PutItemCommandInput = {
-        TableName: "categories",
-        Item: marshall({
-          key: "niush",
-          title: "niush is ok",
-          categorySlug: "niushaaaaa"
-        })
-    };
-    
-      
-      const x = await ddbClient.send(new PutItemCommand(params));
-      console.log(x);
-      return ['ali', 'reza', 'siavash']
+  @Post("/category")
+  async addCategory(@Body() category: Category): Promise<string> {
+    console.log('[POST] /category');
+    if(!category || isEmpty(category.userId)) {
+      return 'please enter valid data';
     }
-    // return ['ali', 'reza', 'siavash'];
-  
+    const user = await this.userRepository.getUserById(category.userId, category.userName);
+    
+    if(!user) {
+      return 'invalid userId or userName';
+    }
+
+    const slugKey = `CAT-${uuid()}`;
+    const response =  this.categoryRepository.insert({
+      ...category,
+      categoryId: slugKey,
+      userId: category.userId
+    })
+    return JSON.stringify('Category Added');
+  }  
+
+  // @Get("/category")
+  // async getCategory() {
+
+  // }
+
+  @Delete("/category")
+  async deleteCategory(@Body() category: Category): Promise<string> {
+    console.log('[DELETE] /category');
+    const response =  this.categoryRepository.deleteByKey(category.categoryId);
+    return JSON.stringify(response);
+  }
 }
